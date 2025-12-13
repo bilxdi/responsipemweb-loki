@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loki Multiverse - Login</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="validation-alert" id="validationAlert" style="display: none;"></div>
+
+    <div class="formloginoverlay" id="overlayAkun" style="display: none;">
+        <div class="demo-akun-prototype">DEMO AKUN PROTOTYPE</div>
+        
+        <div class="akun-container">
+            <div class="default">
+                <div class="user-default">user: default | pass: 123</div>
+            </div>
+            <div class="default">
+                <div class="user-default">user: sylvie | pass: 123</div>
+            </div>
+            <div class="default">
+                <div class="user-default">user: classic | pass: 123</div>
+            </div>
+            <div class="default">
+                <div class="user-default">user: boastful | pass: 123</div>
+            </div>
+            <div class="default">
+                <div class="user-default">user: alligator | pass: 123</div>
+            </div>
+            <div class="default">
+                <div class="user-default">user: kid | pass: 123</div>
+            </div>
+            <div class="default">
+                <div class="user-default">user: president | pass: 123</div>
+            </div>
+        </div>
+
+        <div class="klik-luar-overlay" id="btnCloseOverlay">Klik luar overlay buat exit</div>
+    </div>
+
+    <div class="page-container" id="loginPage">
+        <div class="form-card">
+            <div class="loki-multiverse">LOKI MULTIVERSE</div>
+            <div class="sub-title">Masukkan Akun untuk Login</div>
+            <div class="input-wrapper">
+                <input type="text" class="custom-input" id="inputUsername" placeholder="Username">
+                <div class="error-message" id="usernameError"></div>
+            </div>
+            <div class="input-wrapper">
+                <input type="password" class="custom-input" id="inputPassword" placeholder="Password">
+                <div class="error-message" id="passwordError"></div>
+            </div>
+            <div class="login-info" id="loginInfo"></div>
+            <div class="buttonmain" id="btnLogin">MASUK KE MULTIVERSE</div>
+            <div class="demo-toggle" onclick="showDemoAccounts()">ℹ️ Lihat Akun Demo</div>
+            <div class="link-bawah" id="linkKeRegister">Belum Punya Akun? Register</div>
+        </div>
+    </div>
+
+    <div class="page-container" id="registerPage" style="display: none;">
+        <div class="form-card">
+            <div class="loki-multiverse">LOKI MULTIVERSE</div>
+            <div class="sub-title">Buat Akun Baru</div>
+            <div class="input-wrapper">
+                <input type="text" class="custom-input" id="regUsername" placeholder="Username">
+                <div class="error-message" id="regUsernameError"></div>
+            </div>
+            <div class="input-wrapper">
+                <input type="password" class="custom-input" id="regPassword" placeholder="Password">
+                <div class="error-message" id="regPasswordError"></div>
+            </div>
+            <div class="input-wrapper">
+                <input type="password" class="custom-input" id="regConfirmPassword" placeholder="Konfirmasi Password">
+                <div class="error-message" id="regConfirmError"></div>
+            </div>
+            <div class="register-info" id="registerInfo"></div>
+            <div class="buttonmain register-btn" id="btnRegister">DAFTAR SEKARANG</div>
+            <div class="link-bawah" id="linkKeLogin">Sudah Punya Akun? Login</div>
+        </div>
+    </div>
+
+    <script src="./login.js"></script>
+</body>
+</html>
