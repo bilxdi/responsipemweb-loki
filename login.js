@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         // Demo accounts
         const demoAccounts = [
+            {user:"admin", pass:"321"},
             {user:"default", pass:"123"},
             {user:"sylvie", pass:"123"},
             {user:"classic", pass:"123"},
@@ -50,11 +51,16 @@ document.addEventListener("DOMContentLoaded", function () {
         const isValidLocal = localUsers.some(user => user.username === username && user.password === password);
         
         if(username && password && (isValidDemo || isValidLocal)) {
-            // Simpan username untuk digunakan di halaman lain
             sessionStorage.setItem('currentUser', username);
             
-            // Redirect ke halaman home
-            window.location.href = "home/index.html";
+            // LOGIKA REDIRECT KHUSUS ADMIN
+            if(username === 'admin') {
+                // Jika admin, langsung ke dashboard
+                window.location.href = "admin/dashboard.html";
+            } else {
+                // User biasa ke home
+                window.location.href = "home/index.html"; 
+            }
         } else {
             showAlert("Username/Password Salah!", "error");
         }

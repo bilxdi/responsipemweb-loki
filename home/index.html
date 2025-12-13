@@ -23,197 +23,43 @@
             <div id="navbarSnapBtn" class="nav-snap-btn" style="display: none;">SNAP!</div>
         </div>
         <div class="nav-right">
-            <div class="user-greeting" id="userGreeting">Hai, Varian!</div>
+            <div class="user-greeting" id="userGreeting" style="color:white;">Hai, Varian!</div>
             <div class="btn-keluar" id="btnKeluar">Keluar</div>
         </div>
     </div>
 
     <div id="homePage">
-        <div class="main-content">
-            <div class="header-section">
-                <h1 class="title-gold">PILIH KARAKTER LOKI</h1>
-                <p class="subtitle">Pilih karakter untuk memulai quiz. Kumpulkan 6 Infinity Stones!</p>
+        <div class="main-content" style="width:100%; display:flex; flex-direction: column; align-items: center;">
+            <div class="header-section" style="text-align:center; margin-bottom: 30px;">
+                <h1 class="title-gold" style="font-size:36px; color:#ffd966;">PILIH KARAKTER LOKI</h1>
+                <p class="subtitle" style="color:#ccc;">Pilih karakter untuk memulai quiz. Kumpulkan 6 Infinity Stones!</p>
             </div>
 
-            <div class="character-grid">
-                <div class="card">
-                    <div class="loki-img-wrapper">
-                        <img src="../assets/Rectangle 1-1.png" class="card-img" id="dynamicLokiImg">   
-                    </div>
-                    <div class="card-body">
-                        <h3 id="dynamicLokiName">Loki Laufeyson</h3>
-                        <p class="desc-short" id="dynamicLokiDesc">God of Mischief, ahli sihir.</p>
-                        <div class="btn-read" onclick="openModal('modal-loki')">Baca Selengkapnya</div>
-                        <div class="btn-select" onclick="selectCharacter(this)">Pilih Karakter Ini</div>
-                    </div>
+            <div class="character-grid" id="userGrid">
                 </div>
-
-                <div class="card">
-                    <img src="../assets/Rectangle 1-5.png" class="card-img">
-                    <div class="card-body">
-                        <h3>Mobius M. Mobius</h3>
-                        <p class="desc-short">Agen TVA, teman & mentor Loki.</p>
-                        <div class="btn-read" onclick="openModal('modal-mobius')">Baca Selengkapnya</div>
-                        <div class="btn-select" onclick="selectCharacter(this)">Pilih Karakter Ini</div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="../assets/Rectangle 1-3.png" class="card-img">
-                    <div class="card-body">
-                        <h3>Ravonna Renslayer</h3>
-                        <p class="desc-short">Hakim TVA yang mencari kebenaran.</p>
-                        <div class="btn-read" onclick="openModal('modal-ravonna')">Baca Selengkapnya</div>
-                        <div class="btn-select" onclick="selectCharacter(this)">Pilih Karakter Ini</div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="../assets/Rectangle 1-2.png" class="card-img">
-                    <div class="card-body">
-                        <h3>He Who Remains</h3>
-                        <p class="desc-short">Pencipta TVA dan penjaga Sacred Timeline.</p>
-                        <div class="btn-read" onclick="openModal('modal-kang')">Baca Selengkapnya</div>
-                        <div class="btn-select" onclick="selectCharacter(this)">Pilih Karakter Ini</div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="../assets/Rectangle 1.png" class="card-img">
-                    <div class="card-body">
-                        <h3>Miss Minutes</h3>
-                        <p class="desc-short">AI mascot TVA berbentuk jam.</p>
-                        <div class="btn-read" onclick="openModal('modal-minutes')">Baca Selengkapnya</div>
-                        <div class="btn-select" onclick="selectCharacter(this)">Pilih Karakter Ini</div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <img src="../assets/Rectangle 1-4.png" class="card-img">
-                    <div class="card-body">
-                        <h3>Hunter B-15</h3>
-                        <p class="desc-short">Hunter TVA yang tangguh.</p>
-                        <div class="btn-read" onclick="openModal('modal-hunter')">Baca Selengkapnya</div>
-                        <div class="btn-select" onclick="selectCharacter(this)">Pilih Karakter Ini</div>
-                    </div>
-                </div>
-
-            </div>
             
-            <div class="buttonmulai-container">
-                <div class="haspickedfalse" id="btnStartFalse">
-                    <div class="mulai-quiz">PILIH KARAKTER DULU</div>
+            <div class="buttonmulai-container" style="margin-top:40px; width:100%; max-width:500px;">
+                <div class="haspickedfalse" id="btnStartFalse" style="width:100%; height:60px; background:#333; border-radius:10px; display:flex; align-items:center; justify-content:center; color:#777; font-weight:bold;">
+                    PILIH KARAKTER DULU
                 </div>
-                <div class="haspickedtrue" id="btnStartTrue" style="display: none;">
-                    <div class="mulai-quiz">MULAI QUIZ</div>
+                <div class="haspickedtrue" id="btnStartTrue" style="display: none; width:100%; height:60px; background:linear-gradient(90deg, #ffd966, #f5972d); border-radius:10px; align-items:center; justify-content:center; color:#1e1e1e; font-weight:bold; cursor:pointer;">
+                    MULAI QUIZ
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Modals untuk detail karakter -->
-
-        <div id="modal-loki" class="modal-overlay">
-        <div class="dynamic-loki-card">
-            <img src="" class="dynamic-card-img" id="dyn-img">
-            
-            <div class="dynamic-card-body">
-                <div class="dynamic-card-title" id="dyn-title">Loading...</div>
-                <div class="dynamic-card-desc" id="dyn-desc">Loading description...</div>
+    <div class="modal-overlay" id="modalDetail" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:3000; justify-content:center; align-items:center;">
+        <div class="detailcard" style="position:relative;">
+            <img src="" id="detailImg" class="detailcard-child">
+            <div class="detail-content">
+                <div class="char-name" id="detailName">Nama</div>
+                <div class="char-desc" id="detailDesc">Deskripsi</div>
                 
-                <div class="ability-grid">
-                    <div class="ability-box" id="dyn-ability-1">Ability 1</div>
-                    <div class="ability-box" id="dyn-ability-2">Ability 2</div>
-                    <div class="ability-box" id="dyn-ability-3">Ability 3</div>
-                    <div class="ability-box" id="dyn-ability-4">Ability 4</div>
-                </div>
+                <div class="ability" id="detailAbilities" style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;">
+                    </div>
 
-                <div class="buttonmain-close" onclick="closeModal('modal-loki')">Tutup</div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-mobius" class="modal-overlay">
-        <div class="detailcard">
-            <img src="../assets/source/Loki_-_Mobius.png" class="detailcard-child">
-            <div class="detail-content">
-                <div class="char-name">Mobius M. Mobius</div>
-                <div class="char-desc">Agen TVA, teman & mentor Loki. Ahli varian waktu.</div>
-                <div class="ability">
-                    <div class="ability-box">Hand-to-Hand Combat</div>
-                    <div class="ability-box">Understanding of Variants</div>
-                    <div class="ability-box">Historical Knowledge</div>
-                    <div class="ability-box">Multilingualism</div>
-                </div>
-                <div class="buttonmain-close" onclick="closeModal('modal-mobius')">Tutup</div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-ravonna" class="modal-overlay">
-        <div class="detailcard">
-            <img src="../assets/source/Loki_-_Ravonna.png" class="detailcard-child">
-            <div class="detail-content">
-                <div class="char-name">Ravonna Renslayer</div>
-                <div class="char-desc">Hakim TVA yang mencari kebenaran tentang asal-usul TVA.</div>
-                <div class="ability">
-                    <div class="ability-box">Hand-to-Hand Combat</div>
-                    <div class="ability-box">Understanding of Variants</div>
-                    <div class="ability-box">Historical Knowledge</div>
-                    <div class="ability-box">Multilingualism</div>
-                </div>
-                <div class="buttonmain-close" onclick="closeModal('modal-ravonna')">Tutup</div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-kang" class="modal-overlay">
-        <div class="detailcard">
-            <img src="../assets/source/Loki_-_He_Who_Remains.png" class="detailcard-child">
-            <div class="detail-content">
-                <div class="char-name">He Who Remains</div>
-                <div class="char-desc">Pencipta TVA dan penjaga Sacred Timeline.</div>
-                <div class="ability">
-                    <div class="ability-box">Omniscience</div>
-                    <div class="ability-box">Time Manipulation</div>
-                    <div class="ability-box">Advanced Tech</div>
-                    <div class="ability-box">Immortality</div>
-                </div>
-                <div class="buttonmain-close" onclick="closeModal('modal-kang')">Tutup</div>
-            </div>
-        </div>
-    </div>
-
-    <div id="modal-minutes" class="modal-overlay">
-        <div class="detailcard">
-            <img src="../assets/source/Loki_-_Miss_Minutes_Poster.png" class="detailcard-child">
-            <div class="detail-content">
-                <div class="char-name">Miss Minutes</div>
-                <div class="char-desc">AI mascot TVA berbentuk jam.</div>
-                <div class="ability">
-                    <div class="ability-box">Holographic Form</div>
-                    <div class="ability-box">TVA Database</div>
-                    <div class="ability-box">Omnipresence</div>
-                    <div class="ability-box">System Control</div>
-                </div>
-                <div class="buttonmain-close" onclick="closeModal('modal-minutes')">Tutup</div>
-            </div>
-        </div>
-    </div>
-
-        <div id="modal-hunter" class="modal-overlay">
-        <div class="detailcard">
-            <img src="../assets/source/Loki_-_Hunter_B-15.png" class="detailcard-child">
-            <div class="detail-content">
-                <div class="char-name">Hunter B-15</div>
-                <div class="char-desc">Hunter TVA yang tangguh. Mulai mengingat masa lalunya dan mempertanyakan misinya.</div>
-                <div class="ability">
-                    <div class="ability-box">Hand-to-Hand Combat</div>
-                    <div class="ability-box">Heavy Weaponry</div>
-                    <div class="ability-box">TVA Tactics</div>
-                    <div class="ability-box">Leadership</div>
-                </div>
-                <div class="buttonmain-close" onclick="closeModal('modal-hunter')">Tutup</div>
+                <div class="buttonmain-close" onclick="closeModal('modalDetail')">Tutup</div>
             </div>
         </div>
     </div>

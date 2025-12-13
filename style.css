@@ -105,7 +105,7 @@ body { margin: 0; padding: 0; width: 100%; min-height: 100vh; font-family: 'Popp
 /* NAVBAR */
 .navbar { position: fixed; top: 0; left: 0; width: 100%; height: 80px; background: rgba(0,0,0,0.9); backdrop-filter: blur(5px); display: flex; justify-content: space-between; align-items: center; padding: 0 40px; z-index: 1000; border-bottom: 1px solid #f5972d; }
 .nav-left, .nav-right { display: flex; align-items: center; gap: 20px; }
-.brand-title { font-size: 24px; background: linear-gradient(90deg, #ffd966, #f5972d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+.brand-title { font-size: 24px; background: linear-gradient(90deg, #ffd966, #f5972d); background-clip: text; -webkit-text-fill-color: transparent; }
 .stones-container { display: flex; gap: 10px; align-items: center; }
 .btn-keluar { background: #9e0000; padding: 8px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: background 0.3s; }
 .btn-keluar:hover { background: #c00000; }
@@ -121,7 +121,13 @@ body { margin: 0; padding: 0; width: 100%; min-height: 100vh; font-family: 'Popp
 .character-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; max-width: 1200px; width: 100%; padding: 0 20px; }
 .card { background: #1e1e1e; border-radius: 12px; overflow: hidden; box-shadow: 0 0 10px #f5972d; display: flex; flex-direction: column; transition: transform 0.3s; }
 .card:hover { transform: translateY(-5px); }
-.card-img { width: 100%; height: 226px; object-fit: cover; }
+.card-img { 
+    width: 100%; 
+    height: 300px;
+    object-fit: cover; 
+    object-position: top center;
+    border-bottom: 1px solid #333;
+}
 .card-body { padding: 20px; display: flex; flex-direction: column; gap: 10px; flex-grow: 1; }
 .card-body h3 { color: #ffd966; margin: 0; font-size: 24px; }
 .desc-short { font-size: 14px; color: #ccc; }
@@ -180,14 +186,14 @@ body { margin: 0; padding: 0; width: 100%; min-height: 100vh; font-family: 'Popp
 /* RESULT */
 #resultSection { width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.85); z-index: 100; padding: 20px; }
 .result-card { background: #1e1e1e; padding: 40px; border-radius: 12px; text-align: center; box-shadow: 0 0 25px #f5972d; width: 659px; max-width: 100%; display: flex; flex-direction: column; gap: 20px; animation: popup 0.5s ease-out; margin: auto; }
-.final-score { font-size: 80px; font-weight: bold; background: linear-gradient(90deg, #ffd966, #f5972d); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin: 20px 0; }
+.final-score { font-size: 80px; font-weight: bold; background: linear-gradient(90deg, #ffd966, #f5972d); background-clip: text; -webkit-text-fill-color: transparent; margin: 20px 0; }
 .btn-result { padding: 15px 30px; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; background: #ffd966; color: #1e1e1e; margin: 10px; display: inline-block; }
 
 /* FIX DETAIL CARD (MODAL) */
 .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; display: none; justify-content: center; align-items: center; padding: 20px; }
-.detailcard { width: 766px; max-width: 100%; background-color: #1e1e1e; box-shadow: 0px 0px 20px #f5972d; border-radius: 10px; display: flex; flex-direction: column; overflow: hidden; max-height: 90vh; overflow-y: auto; }
-.detailcard-child { width: 100%; height: 350px; object-fit: cover; object-position: top; display: block; }
-.detail-content { padding: 30px; display: flex; flex-direction: column; gap: 20px; text-align: left; }
+.detailcard { width: 100%; max-width: 500px; background-color: #1e1e1e; box-shadow: 0px 0px 20px #f5972d; border-radius: 10px; display: flex; flex-direction: column; overflow: hidden; max-height: 90vh; overflow-y: auto; }
+.detailcard-child { width: 100%; height: 450px; object-fit: cover; object-position: top center; display: block; }
+.detail-content { padding: 20px; display: flex; flex-direction: column; gap: 20px; text-align: left; }
 .char-name { font-size: 32px; color: #ffd966; font-weight: bold; }
 .char-desc { font-size: 16px; color: #fff; line-height: 1.6; }
 .ability { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; }

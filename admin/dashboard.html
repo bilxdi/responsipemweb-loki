@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loki Multiverse - Admin Dashboard</title>
+    
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="admin_style.css">
+</head>
+<body>
+
+    <div class="navbar" id="mainNavbar">
+        <div class="nav-left">
+            <b class="brand-title">Loki Multiverse</b>
+            <div class="stones-container">
+                <img src="../assets/source/Power_Stone_VFX.png" class="stone locked" id="nav-power">
+                <img src="../assets/source/Space_Stone_VFX.png" class="stone locked" id="nav-space">
+                <img src="../assets/source/Reality_Stone_VFX.png" class="stone locked" id="nav-reality">
+                <img src="../assets/source/Soul_Stone_VFX.png" class="stone locked" id="nav-soul">
+                <img src="../assets/source/Time_Stone_VFX.png" class="stone locked" id="nav-time">
+                <img src="../assets/source/Mind_Stone_VFX.png" class="stone locked" id="nav-mind">
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="user-greeting" style="color:white;">Hai, <span id="adminUsername">Admin</span></div>
+            <div class="btn-keluar" id="btnLogout">Keluar</div>
+        </div>
+    </div>
+
+    <div class="homeadmin">
+        <div class="header-section">
+            <h1 class="title-gold">DATABASE MULTIVERSE</h1>
+            <p class="subtitle">Kelola Varian Loki: Tambah, Edit, atau Hapus.</p>
+        </div>
+
+        <div class="btn-tambah-container">
+            <button class="btn-tambah" id="btnShowAddModal"> Tambah </button>
+        </div>
+
+        <div class="character-grid" id="adminGrid">
+            </div>
+    </div>
+
+    <div class="popup-overlay" id="modalForm">
+        <div class="form-container">
+            <div class="form-title" id="modalTitle">Tambah Karakter</div>
+            <input type="hidden" id="editCharId">
+
+            <div>
+                <div class="input-label">Nama Karakter</div>
+                <div class="input-field-wrapper">
+                    <input type="text" id="inpName" class="real-input" placeholder="Masukkan Nama...">
+                </div>
+            </div>
+
+            <div>
+                <div class="input-label">Deskripsi Singkat</div>
+                <div class="input-field-wrapper">
+                    <input type="text" id="inpShortDesc" class="real-input" placeholder="Deskripsi Singkat...">
+                </div>
+            </div>
+
+            <div>
+                <div class="input-label">Deskripsi Panjang</div>
+                <div class="textarea-field-wrapper">
+                    <textarea id="inpLongDesc" class="real-textarea" placeholder="Deskripsi Lengkap..."></textarea>
+                </div>
+            </div>
+
+            <div>
+                <div class="input-label">Foto Karakter (Nama File)</div>
+                <div class="input-field-wrapper">
+                    <input type="text" id="inpImage" class="real-input" placeholder="Contoh: Loki_-_Loki.png">
+                </div>
+            </div>
+            
+            <div class="drag-drop-area" id="dragDropArea">
+                <span>Drag & Drop file di sini atau <b class="browse-text">Browse</b></span>
+                <input type="file" id="fileInput" style="display: none;" accept="image/*">
+            </div>
+
+            <div class="form-buttons">
+                <div class="btn-main btn-main-save" id="btnSaveForm">Simpan</div>
+                <div class="btn-main btn-main-cancel" onclick="closeModal('modalForm')">Cancel</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="modalDelete">
+        <div class="delete-container">
+            <div class="delete-title">Delete Karakter</div>
+            <div class="delete-msg">Apakah anda yakin ingin menghapus varian ini?</div>
+            <input type="hidden" id="deleteId">
+            <div class="form-buttons">
+                <div class="btn-main btn-main-save" id="btnConfirmDelete">Delete</div>
+                <div class="btn-main btn-main-cancel" onclick="closeModal('modalDelete')">Cancel</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="popup-overlay" id="modalDetail">
+        <div class="detailcard" style="position:relative;">
+            <img src="" id="detailImg" class="detailcard-child">
+            <div class="detail-content">
+                <div class="char-name" id="detailName">Title</div>
+                <div class="char-desc" id="detailDesc">Desc</div>
+                <div class="ability" id="detailAbilities"></div>
+                <div class="buttonmain-close" onclick="closeModal('modalDetail')">Tutup</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="admin.js"></script>
+</body>
+</html>
