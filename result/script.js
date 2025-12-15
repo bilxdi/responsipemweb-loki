@@ -38,10 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
     
     // Button events
     btnRetry.addEventListener("click", () => {
-        window.location.href = "../quiz/index.html";
+        window.location.href = "../quiz/index.php";
     });
     
     btnHome.addEventListener("click", () => {
-        window.location.href = "../home/index.html";
+        window.location.href = "../home/index.php";
     });
 });

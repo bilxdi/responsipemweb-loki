@@ -13,15 +13,9 @@ document.addEventListener("DOMContentLoaded", function () {
     let usedStones = [];
     let timeStoneActive = false;
 
-    // Check login status
-    const currentUser = sessionStorage.getItem('currentUser');
-    if (!currentUser) {
-        window.location.href = "../index.html";
-        return;
-    }
-
-    // Update UI
-    userGreeting.textContent = `Hai, ${currentUser}!`;
+    // Pengecekan login dan nama pengguna sekarang ditangani oleh PHP di quiz/index.php.
+    // Tidak perlu lagi ada kode pengecekan login di sini.
+    
     updateNavbarStones();
 
     // Questions
@@ -366,9 +360,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Logout
     btnKeluar.addEventListener("click", () => {
-        sessionStorage.removeItem('currentUser');
+        // Hapus data dari localStorage dan arahkan ke file logout.php
         localStorage.removeItem('loki_stones');
-        window.location.href = "../index.html";
+        window.location.href = "../logout.php";
     });
 
     // Load first question

@@ -1,3 +1,12 @@
+<?php
+session_start();
+// Jika tidak ada sesi login, kembalikan ke halaman login
+if (!isset($_SESSION['user'])) {
+    header("Location: ../index.php");
+    exit();
+}
+$username = htmlspecialchars($_SESSION['user']);
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -23,8 +32,8 @@
             <div id="navbarSnapBtn" class="nav-snap-btn" style="display: none;">SNAP!</div>
         </div>
         <div class="nav-right">
-            <div class="user-greeting" id="userGreeting" style="color:white;">Hai, Varian!</div>
-            <div class="btn-keluar" id="btnKeluar">Keluar</div>
+            <div class="user-greeting" id="userGreeting" style="color:white;">Hai, <?php echo $username; ?>!</div>
+            <a href="../logout.php" class="btn-keluar" id="btnKeluar">Keluar</a>
         </div>
     </div>
 
@@ -49,21 +58,25 @@
         </div>
     </div>
 
-    <div class="modal-overlay" id="modalDetail" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:3000; justify-content:center; align-items:center;">
+    <!-- Modal untuk Detail Karakter (Kembali ke Modal) -->
+    <div class="modal-overlay" id="modalDetail" style="display:none;">
         <div class="detailcard" style="position:relative;">
-            <img src="" id="detailImg" class="detailcard-child">
+            <img src="" id="detailImg" class="detailcard-child" onerror="this.src='../assets/char/default.png'">
             <div class="detail-content">
-                <div class="char-name" id="detailName">Nama</div>
-                <div class="char-desc" id="detailDesc">Deskripsi</div>
-                
-                <div class="ability" id="detailAbilities" style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:10px;">
-                    </div>
-
+                <div class="char-name" id="detailName">Nama Karakter</div>
+                <div class="char-desc" id="detailDesc">Deskripsi lengkap karakter akan muncul di sini.</div>
+                <div class="ability" id="detailAbilities">
+                    <!-- Kosong karena tidak ada data ability -->
+                </div>
                 <div class="buttonmain-close" onclick="closeModal('modalDetail')">Tutup</div>
             </div>
         </div>
     </div>
 
-    <script src="./script.js"></script>
+    <script>
+        // Mengirim data sesi PHP ke JavaScript untuk logika di sisi klien
+        const session = { user: '<?php echo $_SESSION['user']; ?>', role: '<?php echo $_SESSION['role']; ?>' };
+    </script>
+    <script src="home.js"></script> <!-- Mengganti script.js ke home.js -->
 </body>
 </html>

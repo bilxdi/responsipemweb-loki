@@ -1,3 +1,11 @@
+<?php
+session_start();
+// Proteksi halaman admin
+if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    header("Location: ../index.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -23,8 +31,8 @@
             </div>
         </div>
         <div class="nav-right">
-            <div class="user-greeting" style="color:white;">Hai, <span id="adminUsername">Admin</span></div>
-            <div class="btn-keluar" id="btnLogout">Keluar</div>
+            <div class="user-greeting" style="color:white;">Hai, <span id="adminUsername"><?php echo htmlspecialchars($_SESSION['user']); ?></span></div>
+            <a href="../logout.php" class="btn-keluar">Keluar</a>
         </div>
     </div>
 
@@ -55,29 +63,15 @@
             </div>
 
             <div>
-                <div class="input-label">Deskripsi Singkat</div>
-                <div class="input-field-wrapper">
-                    <input type="text" id="inpShortDesc" class="real-input" placeholder="Deskripsi Singkat...">
-                </div>
+                <div class="input-label">Deskripsi Karakter</div>
+                <textarea id="inpLongDesc" class="real-textarea" placeholder="Deskripsi Lengkap..."></textarea>
             </div>
 
             <div>
-                <div class="input-label">Deskripsi Panjang</div>
-                <div class="textarea-field-wrapper">
-                    <textarea id="inpLongDesc" class="real-textarea" placeholder="Deskripsi Lengkap..."></textarea>
-                </div>
-            </div>
-
-            <div>
-                <div class="input-label">Foto Karakter (Nama File)</div>
+                <div class="input-label">Nama File Gambar</div>
                 <div class="input-field-wrapper">
-                    <input type="text" id="inpImage" class="real-input" placeholder="Contoh: Loki_-_Loki.png">
+                    <input type="text" id="inpImageFile" class="real-input" placeholder="Contoh: Loki_Laufeyson.png">
                 </div>
-            </div>
-            
-            <div class="drag-drop-area" id="dragDropArea">
-                <span>Drag & Drop file di sini atau <b class="browse-text">Browse</b></span>
-                <input type="file" id="fileInput" style="display: none;" accept="image/*">
             </div>
 
             <div class="form-buttons">
