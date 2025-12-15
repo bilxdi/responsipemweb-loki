@@ -15,6 +15,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="admin_style.css">
+    <link rel="icon" href="../assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
 

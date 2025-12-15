@@ -83,6 +83,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['register'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Loki Multiverse - Login</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <div class="validation-alert" id="validationAlert" style="display: none; animation: slideIn 0.3s ease-out;">
