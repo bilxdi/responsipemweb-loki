@@ -107,7 +107,7 @@ body { margin: 0; padding: 0; width: 100%; min-height: 100vh; font-family: 'Popp
 .nav-left, .nav-right { display: flex; align-items: center; gap: 20px; }
 .brand-title { font-size: 24px; background: linear-gradient(90deg, #ffd966, #f5972d); background-clip: text; -webkit-text-fill-color: transparent; }
 .stones-container { display: flex; gap: 10px; align-items: center; }
-.btn-keluar { background: #9e0000; padding: 8px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: background 0.3s; }
+.btn-keluar { color: white; background: #9e0000; padding: 8px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: background 0.3s; text-decoration: none; }
 .btn-keluar:hover { background: #c00000; }
 
 /* BUTTON SNAP */
