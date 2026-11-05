@@ -10,7 +10,7 @@ $characters = [];
 
 // Logika yang paling andal: Selalu kirim SEMUA karakter.
 // Biarkan JavaScript di sisi klien yang menentukan apa yang akan ditampilkan.
-$sql = "SELECT id_karakter, nama_karakter, deskripsi_karakter, image_file FROM karakter ORDER BY nama_karakter";
+$sql = "SELECT id_karakter, nama_karakter, deskripsi_karakter, image_file FROM karakter ORDER BY id_karakter";
 if ($result = $koneksi->query($sql)) {
     $characters = $result->fetch_all(MYSQLI_ASSOC);
 }
