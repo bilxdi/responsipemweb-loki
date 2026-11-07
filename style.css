@@ -35,15 +35,23 @@ body { margin: 0; padding: 0; width: 100%; min-height: 100vh; font-family: 'Popp
 .form-card { width: 659px; max-width: 100%; background: #1e1e1e; box-shadow: 0 0 15px #f5972d; border-radius: 12px; padding: 40px; display: flex; flex-direction: column; gap: 15px; animation: popup 0.4s ease-out; }
 .loki-multiverse { font-size: 32px; color: #cfa45f; text-align: center; font-weight: bold; }
 .sub-title { text-align: center; margin-bottom: 10px; }
-.input-wrapper { width: 100%; height: 55px; background: #232323; border-radius: 8px; display: flex; align-items: center; padding: 0 15px; border: 1px solid transparent; }
+.input-wrapper { width: 100%; height: 55px; background: #232323; border-radius: 8px; display: flex; align-items: center; padding: 0 0; border: 1px solid transparent; }
 .input-wrapper:focus-within { border-color: #f5972d; }
 .input-wrapper.invalid { border-color: #ff6b6b; animation: shake 0.3s; }
-.custom-input { width: 100%; background: transparent; border: none; outline: none; color: #fff; font-size: 16px; }
+.custom-input { width: 100%; height: 100%; background: transparent; border: none; border-radius: 8px; outline: none; color: #fff; font-size: 16px; padding: 0 15px; }
 .error-message { color: #ff6b6b; font-size: 12px; margin-top: 5px; display: none; }
 .buttonmain { width: 100%; height: 55px; border-radius: 8px; background: linear-gradient(90deg, #ffd966, #f5972d); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold; color: #1e1e1e; cursor: pointer; margin-top: 15px; transition: transform 0.2s; }
 .buttonmain:hover { transform: scale(1.02); }
 .link-bawah { text-align: center; color: #bbb; cursor: pointer; margin-top: 10px; font-size: 14px; }
 .demo-toggle { text-align: center; color: #f5972d; cursor: pointer; font-size: 14px; margin-top: 10px; padding: 5px; background: rgba(245,151,45,0.1); border-radius: 5px; }
+input.custom-input:-webkit-autofill,
+input.custom-input:-webkit-autofill:hover,
+input.custom-input:-webkit-autofill:focus,
+input.custom-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px rgba(245, 152, 45, 0.05) inset !important;
+  -webkit-text-fill-color: #fff !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
 
 /* DEMO AKUN OVERLAY (UPDATED FROM FIGMA) */
 .formloginoverlay { 
