@@ -40,8 +40,8 @@ body { margin: 0; padding: 0; width: 100%; min-height: 100vh; font-family: 'Popp
 .input-wrapper.invalid { border-color: #ff6b6b; animation: shake 0.3s; }
 .custom-input { width: 100%; height: 100%; background: transparent; border: none; border-radius: 8px; outline: none; color: #fff; font-size: 16px; padding: 0 15px; }
 .error-message { color: #ff6b6b; font-size: 12px; margin-top: 5px; display: none; }
-.buttonmain { width: 100%; height: 55px; border-radius: 8px; background: linear-gradient(90deg, #ffd966, #f5972d); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold; color: #1e1e1e; cursor: pointer; margin-top: 15px; transition: transform 0.2s; }
-.buttonmain:hover { transform: scale(1.02); }
+.buttonmain { width: 100%; height: 55px; border-radius: 8px; background: linear-gradient(90deg, #ffd966, #f5972d); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold; color: #1e1e1e; cursor: pointer; margin-top: 15px; transition: transform 0.2s; border: none; }
+.buttonmain:hover { transform: scale(1.02); filter: brightness(1.1); }
 .link-bawah { text-align: center; color: #bbb; cursor: pointer; margin-top: 10px; font-size: 14px; }
 .demo-toggle { text-align: center; color: #f5972d; cursor: pointer; font-size: 14px; margin-top: 10px; padding: 5px; background: rgba(245,151,45,0.1); border-radius: 5px; }
 input.custom-input:-webkit-autofill,
@@ -164,7 +164,8 @@ input.custom-input:-webkit-autofill:active {
     color: #1e1e1e;
 }
 .haspickedfalse { background: #333; color: #777; cursor: not-allowed; }
-.haspickedtrue { background: linear-gradient(90deg, #ffd966, #f5972d); cursor: pointer; box-shadow: 0 0 25px #f5972d; animation: pulse 1.5s infinite; }
+.haspickedtrue { background: linear-gradient(90deg, #ffd966, #f5972d); cursor: pointer; box-shadow: 0 0 25px #f5972d; animation: pulse 1.5s infinite; transition: all 0.1s; }
+.haspickedtrue:hover { filter: brightness(1.1); }
 
 /* QUIZ */
 #quizSection { width: 100%; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding-top: 80px; position: relative; padding-bottom: 20px; }
