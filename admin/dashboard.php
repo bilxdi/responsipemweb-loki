@@ -85,7 +85,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     <div class="popup-overlay" id="modalDelete">
         <div class="delete-container">
             <div class="delete-title">Delete Karakter</div>
-            <div class="delete-msg">Apakah anda yakin ingin menghapus varian ini?</div>
+            <div class="delete-msg">Apakah yakin ingin menghapus karakter ini?</div>
             <input type="hidden" id="deleteId">
             <div class="form-buttons">
                 <div class="btn-main btn-main-save" id="btnConfirmDelete">Delete</div>
