@@ -216,7 +216,7 @@ input.custom-input:-webkit-autofill:active {
 .btn-next:disabled { background: #666; color: #999; cursor: not-allowed; }
 
 /* RESULT */
-#resultSection { width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.85); z-index: 100; padding: 20px; }
+#resultSection { width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.60); z-index: 100; padding: 20px; }
 .result-card { background: #1e1e1e; padding: 40px; border-radius: 12px; text-align: center; box-shadow: 0 0 25px #f5972d; width: 659px; max-width: 100%; display: flex; flex-direction: column; gap: 20px; animation: popup 0.5s ease-out; margin: auto; }
 .result-title { font-size: 32px; color: #cfa45f; font-weight: bold; }
 .final-score { font-size: 80px; font-weight: bold; background: linear-gradient(90deg, #ffd966, #f5972d); background-clip: text; -webkit-text-fill-color: transparent; width: max-content; }
