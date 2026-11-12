@@ -32,7 +32,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
             </div>
         </div>
         <div class="nav-right">
-            <div class="user-greeting" style="color:white;">Hai, <span id="adminUsername"><?php echo htmlspecialchars($_SESSION['user']); ?></span></div>
+            <div class="user-greeting" style="color:white;">Hai, <span id="adminUsername"><?php echo htmlspecialchars($_SESSION['user']); ?>!</span></div>
             <a href="../logout.php" class="btn-keluar">Keluar</a>
         </div>
     </div>
