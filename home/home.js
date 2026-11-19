@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
             const supportChars = charactersData.filter(char => Number(char.id_karakter) > 7);
 
             // 3. Gabungkan karakter pendukung dengan varian Loki yang spesifik.
-            charsToRender = variantLoki ? [...supportChars, variantLoki] : supportChars; // Jika varian tidak ada, hanya tampilkan support
+            charsToRender = variantLoki ? [variantLoki, ...supportChars] : supportChars; // Jika varian tidak ada, hanya tampilkan support
         } else if (session.role === 'user') {
             // Untuk user biasa, tampilkan hanya karakter yang relevan (Loki Ori + Pendukung)
             const relevantIds = [1, 8, 9, 10, 11, 12];

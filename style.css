@@ -35,15 +35,28 @@ body { margin: 0; padding: 0; width: 100%; min-height: 100vh; font-family: 'Popp
 .form-card { width: 659px; max-width: 100%; background: #1e1e1e; box-shadow: 0 0 15px #f5972d; border-radius: 12px; padding: 40px; display: flex; flex-direction: column; gap: 15px; animation: popup 0.4s ease-out; }
 .loki-multiverse { font-size: 32px; color: #cfa45f; text-align: center; font-weight: bold; }
 .sub-title { text-align: center; margin-bottom: 10px; }
-.input-wrapper { width: 100%; height: 55px; background: #232323; border-radius: 8px; display: flex; align-items: center; padding: 0 15px; border: 1px solid transparent; }
+.input-wrapper { width: 100%; height: 55px; background: #232323; border-radius: 8px; display: flex; align-items: center; padding: 0 0; border: 1px solid transparent; }
 .input-wrapper:focus-within { border-color: #f5972d; }
 .input-wrapper.invalid { border-color: #ff6b6b; animation: shake 0.3s; }
-.custom-input { width: 100%; background: transparent; border: none; outline: none; color: #fff; font-size: 16px; }
+.custom-input { width: 100%; height: 100%; background: transparent; border: none; border-radius: 8px; outline: none; color: #fff; font-size: 16px; padding: 0 15px; }
 .error-message { color: #ff6b6b; font-size: 12px; margin-top: 5px; display: none; }
-.buttonmain { width: 100%; height: 55px; border-radius: 8px; background: linear-gradient(90deg, #ffd966, #f5972d); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold; color: #1e1e1e; cursor: pointer; margin-top: 15px; transition: transform 0.2s; }
-.buttonmain:hover { transform: scale(1.02); }
+.buttonmain { width: 100%; height: 55px; border-radius: 8px; background: linear-gradient(90deg, #ffd966, #f5972d); display: flex; align-items: center; justify-content: center; font-size: 18px; font-weight: bold; color: #1e1e1e; cursor: pointer; margin-top: 15px; transition: transform 0.2s; border: none; }
+@media (hover: hover) {
+    .buttonmain:hover { transform: scale(1.02); filter: brightness(1.1); }
+}
 .link-bawah { text-align: center; color: #bbb; cursor: pointer; margin-top: 10px; font-size: 14px; }
+@media (hover: hover) {
+    .link-bawah:hover { text-decoration: underline; }
+}
 .demo-toggle { text-align: center; color: #f5972d; cursor: pointer; font-size: 14px; margin-top: 10px; padding: 5px; background: rgba(245,151,45,0.1); border-radius: 5px; }
+input.custom-input:-webkit-autofill,
+input.custom-input:-webkit-autofill:hover,
+input.custom-input:-webkit-autofill:focus,
+input.custom-input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px rgba(245, 152, 45, 0.05) inset !important;
+  -webkit-text-fill-color: #fff !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
 
 /* DEMO AKUN OVERLAY (UPDATED FROM FIGMA) */
 .formloginoverlay { 
@@ -108,11 +121,25 @@ body { margin: 0; padding: 0; width: 100%; min-height: 100vh; font-family: 'Popp
 .brand-title { font-size: 24px; background: linear-gradient(90deg, #ffd966, #f5972d); background-clip: text; -webkit-text-fill-color: transparent; }
 .stones-container { display: flex; gap: 10px; align-items: center; }
 .btn-keluar { color: white; background: #9e0000; padding: 8px 20px; border-radius: 6px; cursor: pointer; font-weight: bold; transition: background 0.3s; text-decoration: none; }
-.btn-keluar:hover { background: #c00000; }
+@media (hover: hover) {
+    .btn-keluar:hover { background: #c00000; }
+}
 
 /* BUTTON SNAP */
-.nav-snap-btn { background: linear-gradient(45deg, #4b0082, #ffd700); color: #fff; padding: 5px 15px; border-radius: 8px; font-weight: bold; cursor: pointer; margin-left: 15px; box-shadow: 0 0 10px #ffd700; animation: glowing 1.5s infinite alternate; font-size: 14px; border: 1px solid #fff; white-space: nowrap; }
-.nav-snap-btn:hover { transform: scale(1.1); }
+.nav-snap-btn { background: linear-gradient(90deg, #ff3b30, #ff9500, #ffcc00, #34c759, #007aff, #af52de);
+    background: linear-gradient(
+        90deg in oklch,
+        #ff3b30,
+        #ff9500,
+        #ffcc00,
+        #34c759,
+        #007aff,
+        #af52de
+    );
+    color: #fff; padding: 5px 15px; border-radius: 8px; font-weight: bold; cursor: pointer; margin-left: 15px; box-shadow: 0 0 10px #ffd700; animation: glowing 1.5s infinite alternate; font-size: 14px; border: 1px solid #fff; white-space: nowrap; }
+@media (hover: hover) {
+    .nav-snap-btn:hover { transform: scale(1.1); }
+}
 
 /* HOME */
 #homePage { padding-top: 100px; padding-bottom: 50px; display: flex; flex-direction: column; align-items: center; width: 100%; }
@@ -132,8 +159,15 @@ body { margin: 0; padding: 0; width: 100%; min-height: 100vh; font-family: 'Popp
 .card-body h3 { color: #ffd966; margin: 0; font-size: 24px; }
 .desc-short { font-size: 14px; color: #ccc; }
 .btn-read { color: #f5972d; text-decoration: underline; cursor: pointer; font-size: 14px; margin-top: auto; }
-.btn-select { background: linear-gradient(90deg, #ffd966, #f5972d); color: #1e1e1e; text-align: center; padding: 10px; border-radius: 8px; font-weight: bold; margin-top: 15px; cursor: pointer; transition: all 0.3s; }
+@media (hover: hover) {
+    .btn-read:hover { text-decoration: none; }
+}
+.btn-select { background: linear-gradient(90deg, #ffd966, #f5972d); color: #1e1e1e; text-align: center; padding: 10px; border-radius: 8px; font-weight: bold; margin-top: 15px; cursor: pointer; transition: all 0.3s, filter 0.1s; }
+@media (hover: hover) {
+    .btn-select:hover { filter: brightness(1.1); }
+}
 .btn-select.selected { background: #3c1800 !important; color: #ffd966 !important; border: 2px solid #ffd966; }
+.btn-select.selected:hover { filter: none; }
 
 /* FIX BUTTON MULAI (CLEAN LOOK) */
 .buttonmulai-container { 
@@ -156,7 +190,10 @@ body { margin: 0; padding: 0; width: 100%; min-height: 100vh; font-family: 'Popp
     color: #1e1e1e;
 }
 .haspickedfalse { background: #333; color: #777; cursor: not-allowed; }
-.haspickedtrue { background: linear-gradient(90deg, #ffd966, #f5972d); cursor: pointer; box-shadow: 0 0 25px #f5972d; animation: pulse 1.5s infinite; }
+.haspickedtrue { background: linear-gradient(90deg, #ffd966, #f5972d); cursor: pointer; box-shadow: 0 0 25px #f5972d; animation: pulse 1.5s infinite; transition: filter 0.1s; }
+@media (hover: hover) {
+    .haspickedtrue:hover { filter: brightness(1.1); }
+}
 
 /* QUIZ */
 #quizSection { width: 100%; min-height: 100vh; display: flex; justify-content: center; align-items: center; padding-top: 80px; position: relative; padding-bottom: 20px; }
@@ -165,51 +202,69 @@ body { margin: 0; padding: 0; width: 100%; min-height: 100vh; font-family: 'Popp
 .question-number { color: #cfa45f; font-weight: bold; font-size: 18px; }
 .quiz-progress { width: 100%; height: 8px; background: #333; border-radius: 4px; overflow: hidden; }
 .quiz-progress-bar { height: 100%; background: linear-gradient(90deg, #ffd966, #f5972d); width: 0%; transition: width 0.3s; }
-.question-text { font-size: 22px; font-weight: 500; min-height: 80px; display: flex; align-items: center; }
+.question-text { font-size: 22px; font-weight: 500; min-height: 50px; display: flex;}
 .options-container { display: flex; flex-direction: column; gap: 15px; }
 .option-btn { width: 100%; padding: 15px 20px; background: linear-gradient(90deg, #ffd966, #f5972d); border-radius: 10px; color: #1e1e1e; font-size: 16px; font-weight: bold; cursor: pointer; text-align: left; border: none; transition: transform 0.2s; }
-.option-btn:hover { transform: scale(1.02); filter: brightness(1.1); }
+@media (hover: hover) {
+    .option-btn:hover { transform: scale(1.02); filter: brightness(1.1); }
+}
 .option-btn.selected { border: 3px solid #fff; }
 .option-btn.correct-answer { background: #2d5a27 !important; color: white !important; }
 .option-btn.wrong-answer { background: #8c3327 !important; color: white !important; opacity: 0.7; }
 .option-btn:disabled { cursor: not-allowed; opacity: 0.7; }
 .option-btn.option-hidden { opacity: 0.1; pointer-events: none; filter: grayscale(100%); }
-.quiz-feedback { text-align: center; padding: 10px; border-radius: 6px; font-weight: bold; display: none; margin: 10px 0; }
+.quiz-feedback { text-align: center; padding: 10px; border-radius: 6px; font-weight: bold; display: none; margin: 10px 0px 0px; }
 .quiz-feedback.correct { background: rgba(76, 175, 80, 0.2); color: #4CAF50; border: 1px solid #4CAF50; }
 .quiz-feedback.incorrect { background: rgba(244, 67, 54, 0.2); color: #f44336; border: 1px solid #f44336; }
 .correct-answer-text { color: #ffd966; background: rgba(60, 24, 0, 0.5); padding: 10px; border-radius: 6px; text-align: center; display: none; }
 .quiz-nav { display: flex; justify-content: space-between; margin-top: 20px; }
-.btn-nav { padding: 10px 30px; border-radius: 8px; cursor: pointer; font-weight: bold; background: #333; color: #ccc; }
+.btn-nav { padding: 10px 30px; border-radius: 8px; cursor: pointer; font-weight: bold; background: #333; color: #ccc; transition: filter 0.1s; }
+@media (hover: hover) {
+    .btn-nav:hover { filter: brightness(1.1); }
+}
 .btn-next { background: #f5972d; color: #1e1e1e; }
 .btn-next:disabled { background: #666; color: #999; cursor: not-allowed; }
 
 /* RESULT */
-#resultSection { width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.85); z-index: 100; padding: 20px; }
+#resultSection { width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.60); z-index: 100; padding: 20px; }
 .result-card { background: #1e1e1e; padding: 40px; border-radius: 12px; text-align: center; box-shadow: 0 0 25px #f5972d; width: 659px; max-width: 100%; display: flex; flex-direction: column; gap: 20px; animation: popup 0.5s ease-out; margin: auto; }
-.final-score { font-size: 80px; font-weight: bold; background: linear-gradient(90deg, #ffd966, #f5972d); background-clip: text; -webkit-text-fill-color: transparent; margin: 20px 0; }
-.btn-result { padding: 15px 30px; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; background: #ffd966; color: #1e1e1e; margin: 10px; display: inline-block; }
+.result-title { font-size: 32px; color: #cfa45f; font-weight: bold; }
+.final-score { font-size: 80px; font-weight: bold; background: linear-gradient(90deg, #ffd966, #f5972d); background-clip: text; -webkit-text-fill-color: transparent; width: max-content; }
+.final-score-wrapper { display: flex; align-items: center; justify-content: center; }
+.btn-result { padding: 15px 30px; border-radius: 10px; font-size: 18px; font-weight: bold; cursor: pointer; color: #1e1e1e; margin: 10px; display: inline-block; }
+@media (hover: hover) {
+    .btn-result:hover { filter: brightness(1.1); }
+}
+.result-again { background-color: #ffd966; }
+.result-home { background-color: #f5972d; }
 
 /* FIX DETAIL CARD (MODAL) */
-.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 2000; display: none; justify-content: center; align-items: center; padding: 20px; }
-.detailcard { width: 100%; max-width: 500px; background-color: #1e1e1e; box-shadow: 0px 0px 20px #f5972d; border-radius: 10px; display: flex; flex-direction: column; overflow: hidden; max-height: 90vh; overflow-y: auto; }
+.modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; display: none; justify-content: center; align-items: center; padding: 20px; }
+.detailcard { width: 100%; max-width: 500px; background-color: #1e1e1e; box-shadow: 0px 0px 20px #f5972d; border-radius: 10px; display: flex; flex-direction: column; overflow: hidden; max-height: 90vh; overflow-y: auto; scrollbar-color: #8B8B8B #1e1e1e; }
 .detailcard-child { width: 100%; height: 450px; object-fit: cover; object-position: top center; display: block; }
 .detail-content { padding: 20px; display: flex; flex-direction: column; gap: 20px; text-align: left; }
 .char-name { font-size: 32px; color: #ffd966; font-weight: bold; }
 .char-desc { font-size: 16px; color: #fff; line-height: 1.6; }
 .ability { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; width: 100%; }
 .buttonmainalt { background-color: #3c1800; border: 2px solid #ffd966; border-radius: 10px; padding: 12px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 14px; font-weight: 600; text-align: center; }
-.buttonmain-close { width: 100%; background: linear-gradient(90deg, #ffd966, #f5972d); border-radius: 10px; padding: 15px; color: #1e1e1e; font-weight: bold; text-align: center; cursor: pointer; font-size: 18px; margin-top: 10px; }
-.buttonmain-close:hover { transform: scale(1.02); }
+.buttonmain-close { width: 100%; background: linear-gradient(90deg, #ffd966, #f5972d); border-radius: 10px; padding: 15px; color: #1e1e1e; font-weight: bold; text-align: center; cursor: pointer; font-size: 18px; margin-top: 10px; transition: transform 0.2s; }
+@media (hover: hover) {
+    .buttonmain-close:hover { transform: scale(1.02); filter: brightness(1.1); }
+}
 
 /* STONES */
 .stone { width: 30px; height: 30px; object-fit: contain; transition: all 0.3s ease; position: relative; }
 .stone.locked { filter: grayscale(100%) opacity(0.3); transform: scale(0.8); cursor: default; }
 .stone.unlocked { filter: grayscale(0%) opacity(1) drop-shadow(0 0 5px rgba(255, 255, 255, 0.6)); transform: scale(1); cursor: pointer; z-index: 1001; }
-.stone.unlocked:hover { transform: scale(1.2); filter: drop-shadow(0 0 10px #fff); }
+@media (hover: hover) {
+    .stone.unlocked:hover { transform: scale(1.2); filter: drop-shadow(0 0 10px #fff); }
+}
 .stone.used { filter: grayscale(100%) brightness(0.4); opacity: 0.5; cursor: not-allowed; border: 2px solid #555; border-radius: 50%; }
 #stoneSpawnArea { position: absolute; top: -50px; right: -50px; width: 100px; height: 100px; z-index: 1500; pointer-events: none; display: flex; justify-content: center; align-items: center; }
 .collectable-stone { width: 80px; height: auto; cursor: pointer; pointer-events: auto; animation: floatStone 3s ease-in-out infinite; filter: drop-shadow(0 0 15px gold); transition: transform 0.2s; }
-.collectable-stone:hover { transform: scale(1.2) rotate(10deg); }
+@media (hover: hover) {
+    .collectable-stone:hover { transform: scale(1.2) rotate(10deg); }
+}
 .collectable-stone:active { transform: scale(0.8); }
 
 /* ANIMATIONS */

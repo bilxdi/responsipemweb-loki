@@ -22,7 +22,9 @@
     cursor: pointer; border: none; transition: transform 0.2s;
     box-shadow: 0 0 10px #f5972d;
 }
-.btn-tambah:hover { transform: scale(1.05); background: #fff; }
+@media (hover: hover) {
+    .btn-tambah:hover { transform: scale(1.04); filter: brightness(1.1); }
+}
 
 /* --- STYLE TOMBOL DI KARTU (Pengganti Pilih Karakter) --- */
 .admin-card-actions {
@@ -34,7 +36,9 @@
     font-weight: bold; text-align: center; cursor: pointer;
     font-size: 14px; transition: filter 0.2s;
 }
-.btn-admin-action:hover { filter: brightness(1.1); }
+@media (hover: hover) {
+    .btn-admin-action:hover { filter: brightness(1.1); }
+}
 
 .btn-edit { background: #ffd966; color: #1e1e1e; }
 .btn-delete { background: #f5972d; color: #1e1e1e; }
@@ -44,9 +48,9 @@
 .popup-overlay {
     display: none; position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.85); z-index: 2000;
+    background: rgba(0,0,0,0.8); z-index: 2000;
     justify-content: center; align-items: center;
-    backdrop-filter: blur(5px); overflow-y: auto; padding: 20px;
+    overflow-y: auto; padding: 20px;
 }
 
 .form-container {
@@ -102,6 +106,9 @@
     flex: 1; height: 50px;
     border-radius: 8px; display: flex; align-items: center; justify-content: center;
     font-size: 18px; font-weight: bold; cursor: pointer;
+}
+@media (hover: hover) {
+    .btn-main:hover { filter: brightness(1.1); }
 }
 .btn-main-save { background: linear-gradient(90deg, #ffd966, #f5972d); color: #1e1e1e; }
 .btn-main-cancel { background-color: #3c1800; border: 2px solid #ffd966; color: #ffd966; }
